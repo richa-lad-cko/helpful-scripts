@@ -17,6 +17,8 @@ Find the location you want to clone this repo to, and in the terminal run:
 - ``CLUSTER_ALIAS="<KAFKA_CLUSTER_ALIAS>"``: case sensitive, the alias of the kafka cluster you are connecting to. 
 - ``SNOWFLAKE_ACCOUNT=<SNOWFLAKE_ACCOUNT>``: case sensitive, the name of the snowflake account you are using. E.g. ``checkout-checkout.privatelink``
 - ``SNOWFLAKE_USER=<YOUR_SNOWFLAKE_USERNAME>``: upper case, the username you use when working in snowflake
+- ``SNOWFLAKE_ROLE=<SNOWFLAKE_ROLE>``: upper case, the role you use when working in snowflake
+- ``SNOWFLAKE_WAREHOUSE=<SNOWFLAKE_WAREHOUSE>``: upper case, the warehouse you want to use in snowflake
 
 NOTE: if you are only using one api, then you only need to create the variables relating to this api e.g. if you only wish to use the snowflake api, you only need to set ``SNOWFLAKE_ACCOUNT`` and ``SNOWFLAKE_USER``.
 
