@@ -24,8 +24,8 @@ if __name__ == "__main__":
     sf = Snowflake(
         user=os.getenv("SNOWFLAKE_USER"),
         account=os.getenv("SNOWFLAKE_ACCOUNT"),
-        role="DATA_PLATFORM_TRANSFORM",
-        warehouse="BAU_WH"
+        role=os.getenv("SNOWFLAKE_ROLE"),
+        warehouse=os.getenv("SNOWFLAKE_WAREHOUSE")
     )
     conn = sf.get_connection()
 

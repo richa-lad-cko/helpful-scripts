@@ -55,5 +55,5 @@ if __name__ == "__main__":
     env = os.getenv("ENVIRONMENT")
     host = f"https://lenses.cko-{env}.ckotech.co"
     lenses = LensesAPI(host)
-    connectors = lenses.get_connectors(cluster_alias="connectClusters")
+    connectors = lenses.get_connectors(cluster_alias=os.getenv("CLUSTER_ALIAS"))
     print(connectors)

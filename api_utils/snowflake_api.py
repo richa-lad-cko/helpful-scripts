@@ -1,4 +1,5 @@
 import snowflake.connector as connector
+import os
 
 class Snowflake:
 
@@ -43,10 +44,10 @@ if __name__ == "__main__":
     """
 
     sf = Snowflake(
-        user="RLAD",
-        account="checkout-qa.privatelink",
-        role="DATA_ENGINEER",
-        warehouse="BAU_WH"
+        user=os.getenv("SNOWFLAKE_USER"),
+        account=os.getenv("SNOWFLAKE_ACCOUNT"),
+        role=os.getenv("SNOWFLAKE_ROLE"),
+        warehouse=os.getenv("SNOWFLAKE_WAREHOUSE")
     )
 
     conn = sf.get_connection()
