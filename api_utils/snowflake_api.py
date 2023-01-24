@@ -3,20 +3,31 @@ import os
 
 class Snowflake:
 
-    def __init__(self, user, account, role, warehouse):
+    def __init__(self, user, account, role, warehouse, password=None):
         self.user = user
         self.account = account
         self.role = role
         self.warehouse = warehouse
+        self.password = password
 
     def get_connection(self):
-        return connector.connect(
-            user=self.user,
-            account=self.account,
-            role=self.role,
-            warehouse=self.warehouse,
-            authenticator="externalbrowser"
-        )
+        if not self.password:
+            return connector.connect(
+                user=self.user,
+                account=self.account,
+                role=self.role,
+                warehouse=self.warehouse,
+                authenticator="externalbrowser"
+            )
+        else:
+            print("auth using pwrd")
+            return connector.connect(
+                user=self.user,
+                account=self.account,
+                role=self.role,
+                warehouse=self.warehouse,
+                password=self.password
+            )
     
     def execute_query(self, query, conn):
         results = conn.cursor().execute(query)

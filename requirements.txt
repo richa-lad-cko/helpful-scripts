@@ -1,3 +1,4 @@
 requests
+boto3
 snowflake-connector-python
 snowflake-connector-python[pandas]
